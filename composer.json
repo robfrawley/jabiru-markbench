@@ -1,10 +1,14 @@
 {
-    "name": "kzykhys/markbench",
+    "name": "scribenet/jabiru-markbench",
     "description": "The markdown benchmark framework",
     "keywords": ["markdown", "benchmark"],
     "license": "MIT",
     "minimum-stability": "stable",
     "authors": [
+        {
+            "name": "Rob Frawley 2nd",
+            "email": "rmf@scribe.tools"
+        },
         {
             "name": "Kazuyuki Hayashi",
             "email": "hayashi@valnur.net"
@@ -21,9 +25,7 @@
         "symfony/finder": "~2.3",
         "kzykhys/parallel": ">=0.1",
         "symfony/stopwatch": "~2.3",
-        "kzykhys/git": "*"
-    },
-    "require-dev": {
+        "kzykhys/git": "*",
         "kzykhys/ciconia": "*",
         "michelf/php-markdown": "*",
         "erusev/parsedown": "*",
