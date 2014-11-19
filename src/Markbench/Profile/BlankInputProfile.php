@@ -45,7 +45,7 @@ class BlankInputProfile implements ProfileInterface
      */
     public function getLoopCount()
     {
-        return 1000;
+        return 2000;
     }
 
 }

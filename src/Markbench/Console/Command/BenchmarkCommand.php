@@ -9,6 +9,7 @@ use Markbench\ProfileInterface;
 use Markbench\Result;
 use Markbench\Runner;
 use PHPGit\Git;
+use PHPGit\Exception\GitException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -226,7 +227,11 @@ class BenchmarkCommand extends Command
             $git = new Git();
             $git->setRepository(dirname($json_path));
 
-            return $git->describe->tags();
+            try {
+                return $git->describe->tags();
+            } catch(GitException $e) {
+                return 'master';
+            }
         } else {
             return $packages[0]->getPrettyVersion();
         }

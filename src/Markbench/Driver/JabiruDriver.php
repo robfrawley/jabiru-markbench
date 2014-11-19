@@ -42,7 +42,7 @@ class JabiruDriver implements DriverInterface
      */
     public function getDialect()
     {
-        return null;
+        return 'core';
     }
 
     /**

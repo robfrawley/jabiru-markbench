@@ -4,7 +4,7 @@ namespace Markbench\Profile;
 
 use Markbench\ProfileInterface;
 
-class TextileProfile implements ProfileInterface
+class GitHubAndHtmlAttributesProfile implements ProfileInterface
 {
 
     /**
@@ -14,7 +14,7 @@ class TextileProfile implements ProfileInterface
      */
     public function getName()
     {
-        return 'textile-sample';
+        return 'github-attrs';
     }
 
     /**
@@ -24,7 +24,7 @@ class TextileProfile implements ProfileInterface
      */
     public function getDescription()
     {
-        return 'Sample Gfm+Textile content / 1000 times';
+        return 'Sample Gfm+HtmlAttrs content / 1000 times';
     }
 
     /**
@@ -35,27 +35,27 @@ class TextileProfile implements ProfileInterface
     public function getContent()
     {
         return <<<EOF
-GitHub Flavored Markdown
-================================
+GFM+Html Attributes {#id.class1.class2[role="main" align=right]}
+================================================================
 
-*View the [source of this content](http://github.github.com/github-flavored-markdown/sample_content.html).*
+{[data-test=test]} *View the [source of this content](http://github.github.com/github-flavored-markdown/sample_content.html).*
 
-Let's get the whole "linebreak" thing out of the way. The next paragraph contains two phrases separated by a single newline character:
-
-Roses are red
-Violets are blue
-
-The next paragraph has the same phrases, but now they are separated by two spaces and a newline character:
+{[data-test=test]} Let's get the whole "linebreak" thing out of the way. The next paragraph contains two phrases separated by a single newline character:
 
 Roses are red
 Violets are blue
 
-Oh, and one thing I cannot stand is the mangling of words with multiple underscores in them like perform_complicated_task or do_this_and_do_that_and_another_thing.
+{[data-test=test]} The next paragraph has the same phrases, but now they are separated by two spaces and a newline character:
 
-A bit of the GitHub spice
--------------------------
+Roses are red
+Violets are blue
 
-In addition to the changes in the previous section, certain references are auto-linked:
+{[data-test=test]} Oh, and one thing I cannot stand is the mangling of words with multiple underscores in them like perform_complicated_task or do_this_and_do_that_and_another_thing.
+
+A bit of the GitHub spice {#id01}
+---------------------------------
+
+{[data-test=test]} In addition to the changes in the previous section, certain references are auto-linked:
 
 * SHA: be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2
 * User@SHA ref: mojombo@be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2
@@ -64,27 +64,27 @@ In addition to the changes in the previous section, certain references are auto-
 * User/#Num: mojombo#1
 * User/Project#Num: mojombo/god#1
 
-These are dangerous goodies though, and we need to make sure email addresses don't get mangled:
+{[data-test=test]} These are dangerous goodies though, and we need to make sure email addresses don't get mangled:
 
-My email addy is tom@github.com.
+{[data-test=test]} My email addy is tom@github.com.
 
-Math is hard, let's go shopping
--------------------------------
+{[data-test=test]} Math is hard, let's go shopping {#id02}
+---------------------------------------
 
 In first grade I learned that 5 > 3 and 2 < 7. Maybe some arrows. 1 -> 2 -> 3. 9 <- 8 <- 7.
 
 Triangles man! a^2 + b^2 = c^2
 
-We all like making lists
-------------------------
+We all like making lists {#id03}
+--------------------------------
 
-The above header should be an H2 tag. Now, for a list of fruits:
+{[data-test=test]} The above header should be an H2 tag. Now, for a list of fruits:
 
 * Red Apples
 * Purple Grapes
 * Green Kiwifruits
 
-Let's get crazy:
+{[data-test=test]} Let's get crazy:
 
 1.  This is a list item with two paragraphs. Lorem ipsum dolor
     sit amet, consectetuer adipiscing elit. Aliquam hendrerit
@@ -106,7 +106,7 @@ What about some code **in** a list? That's insane, right?
 
         ['a', 'b'].map(&:uppercase)
 
-Some people seem to like definition lists
+{[data-test=test]} Some people seem to like definition lists
 
 <dl>
   <dt>Lower cost</dt>
@@ -115,8 +115,8 @@ Some people seem to like definition lists
   <dd>We've changed the product so that it's much easier to use!</dd>
 </dl>
 
-I am a robot
-------------
+I am a robot {#id04}
+--------------------
 
 Maybe you want to print `robot` to the console 1000 times. Why not?
 
@@ -124,16 +124,16 @@ Maybe you want to print `robot` to the console 1000 times. Why not?
       puts("robot " * 1000)
     end
 
-You see, that was formatted as code because it's been indented by four spaces.
+You see, that was formatted as code because it's been indented by four spaces. {.someClass}
 
-How about we throw some angle braces and ampersands in there?
+{#anId.andClass} How about we throw some angle braces and ampersands in there?
 
     <div class="footer">
         &copy; 2004 Foo Corporation
     </div>
 
-Set in stone
-------------
+Set in stone {#id05}
+--------------------
 
 Preformatted blocks are useful for ASCII art:
 
@@ -151,8 +151,8 @@ Preformatted blocks are useful for ASCII art:
   ___|_____________
 </pre>
 
-Playing the blame game
-----------------------
+Playing the blame game {#id06}
+------------------------------
 
 If you need to blame someone, the best way to do so is by quoting them:
 
@@ -170,8 +170,8 @@ Or perhaps someone a little less eloquent:
 > just put me under the spot here, and maybe I'm not as quick on my feet
 > as I should be in coming up with one.
 
-Table for two
--------------
+Table for two {#id07}
+---------------------
 
 <table>
   <tr>
@@ -185,8 +185,8 @@ Table for two
   </tr>
 </table>
 
-Crazy linking action
---------------------
+Crazy linking action {#id08}
+----------------------------
 
 I get 10 times more traffic from [Google] [1] than from
 [Yahoo] [2] or [MSN] [3].
@@ -195,48 +195,43 @@ I get 10 times more traffic from [Google] [1] than from
   [2]: http://search.yahoo.com/  "Yahoo Search"
   [3]: http://search.msn.com/    "MSN Search"
 
-# Textile Additions
+# HTML Attributes
 
-## Comments
+Header {#id.class1.class2[role="main" align=right]}
+======
 
-Comments follow.
+### Header {#id}
 
-###. Comment
+### Header {.class}
 
-    ###. Comment in Code Block
+{[aria-hidden=true]} Header
+-----------
 
-###. This is a comment
+###### {[aria-hidden=true]} Header
 
-## Definition Lists
+{#id} Lorem ipsum dolor sit amet
 
-; HTML
-: HyperText Markup Language
-; HTML
-: HyperText
-: Markup
-: Language
+{#id} Lorem ipsum dolor sit amet,
+consectetur adipisicing elit.
+Qui dicta minus molestiae vel
+beatae natus eveniet ratione temporibus
 
-- HTML := HyperText Markup Language
-- HTML :=
-    HyperText
-    Markup Language =:
-- HTML := HyperText Markup Language
+{#id}
+Lorem ipsum dolor sit amet,
+consectetur adipisicing elit.
+Qui dicta minus molestiae vel
+beatae natus eveniet ratione temporibus
 
-h1>. Right
+Lorem ipsum dolor sit amet,
+consectetur adipisicing elit.
+Qui dicta minus molestiae vel
+beatae natus eveniet ratione temporibus {#id}
 
-h2=. Center
-
-h1. Header 1
-
-h2. Header 2
-
-h3. Header 3
-
-h4. Header 4
-
-h5. Header 5
-
-h6. Header 6
+Lorem ipsum dolor sit amet,
+consectetur adipisicing elit.
+Qui dicta minus molestiae vel
+beatae natus eveniet ratione temporibus
+{#id}
 EOF;
 
     }
@@ -246,7 +241,7 @@ EOF;
      */
     public function getLoopCount()
     {
-        return 1000;
+        return 2000;
     }
 
 }

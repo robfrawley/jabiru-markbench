@@ -7,7 +7,7 @@ use Markbench\ProfileInterface;
 /**
  * @author Kazuyuki Hayashi <hayashi@valnur.net>
  */
-class GithubSampleProfile implements ProfileInterface
+class GithubProfile implements ProfileInterface
 {
 
     /**
@@ -17,7 +17,7 @@ class GithubSampleProfile implements ProfileInterface
      */
     public function getName()
     {
-        return 'github-sample';
+        return 'github';
     }
 
     /**
@@ -206,7 +206,7 @@ EOF;
      */
     public function getLoopCount()
     {
-        return 1000;
+        return 2000;
     }
 
 }
