@@ -1,5 +1,5 @@
 {
-    "name": "scribenet/jabiru-markbench",
+    "name": "scribe/jabiru-markbench",
     "description": "The markdown benchmark framework",
     "keywords": ["markdown", "benchmark"],
     "license": "MIT",
